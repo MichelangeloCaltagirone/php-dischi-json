@@ -13,21 +13,63 @@
     <!-- My Script -->
      <script defer src="./script.js"></script>
 </head>
+
 <body>
     <main id="app">
 
-        <h1 class="text-center text-danger my-4">PHP-DISCHI-JSON</h1>
+        <header class="py-1 px-4">
+            <h1>Logo</h1>
+        </header>
 
-        <ul >
-            <li v-for="(disc, index) in discsList" :key="index">
-                {{disc.author}} <br>
-                {{disc.genre}} <br>
-                {{disc.title}} <br>
-                {{disc.year}} <br>
-                {{disc.poster}} <br>
-            </li>
-        </ul>
-    </main>
+        <div class="container">
+
+            <h1 class="text-center text-danger my-4">PHP-DISCHI-JSON</h1>
+
+            <div class="d-flex flex-wrap row-cols-3">
+                
+                <!-- Per ogni disco presente nella lista -->
+                <div v-for="(disc, index) in discsList" :key="index">
+
+                    <!-- Creo una card -->
+                    <div class="card m-5 px-1 py-4 border border-0">
+
+                        <img :src='disc.poster' class="card-img-top m-auto" :alt="disc.name">
     
+                        <div class="card-body text-center text-white">
+                          <h5 class="card-title">{{disc.title}}</h5>
+                          <p class="card-text">
+                            {{disc.author}} <br>
+                            {{disc.year}} <br>
+                            {{disc.genre}}
+                          </p>                      
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>    
 </body>
+
 </html>
+
+
+<style scoped>
+
+    header {
+        background-color: #05131E;
+    }
+    main{
+        background-color: #1D2D3C;
+    }
+    .card {
+        background-color: #10202F;
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        } 
+    }
+
+</style>
