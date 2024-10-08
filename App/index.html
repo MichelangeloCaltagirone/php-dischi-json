@@ -15,7 +15,18 @@
 </head>
 <body>
     <main id="app">
+
         <h1 class="text-center text-danger my-4">PHP-DISCHI-JSON</h1>
+
+        <ul >
+            <li v-for="(disc, index) in discsList" :key="index">
+                {{disc.author}} <br>
+                {{disc.genre}} <br>
+                {{disc.title}} <br>
+                {{disc.year}} <br>
+                {{disc.poster}} <br>
+            </li>
+        </ul>
     </main>
     
 </body>
